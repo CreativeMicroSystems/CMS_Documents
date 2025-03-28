@@ -1,0 +1,13 @@
+----- ISSUES -----
+1. In AP+AP mode, only the AP configured first can be pinged from the Wi-Fi client. The AP configured second can establish a connection, and the Wi-Fi client can connect to it, but its IP address cannot be pinged.
+2. Uploading configuration files from the webpage is sending junk data along with the config file. As a result, while untarring the config file, it shows a checksum error.
+3. Uploading TLS certificates from the webpage is sending junk data along with the certificate files.
+
+------ PENDING DEVELOPMENT/TESTING -------
+1. Testing the Alibaba server connection.
+2. Testing the storing and resending of failed MQTT transmitted messages.
+3. Creating a utility to set the serial number.
+4. Adding formula conversion, value-to-string mapping, and bit-to-string mapping to the webpage.
+5. Implementing a mechanism to handle .log files to enforce a maximum size limit and store them on the SD card.
+6. After adding formula conversion, value-to-string mapping, and bit-to-string mapping to the webpage, these features must also be included in the generate_config file.
+7. Adding the last restart time and the last restart reason to the webpage.

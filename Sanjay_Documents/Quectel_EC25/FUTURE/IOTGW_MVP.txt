@@ -1,0 +1,24 @@
+1. Auto SIM switching
+2. Wi-Fi interface with AP+AP mode (2.4 GHz and 5.0 GHz)
+3. External RTC
+4. Storing unsent MQTT messages in the SD card and retransmitting them when MQTT reconnects
+5. HC messages, cyclic messages, and event messages transmission
+6. Internal Lighttpd server running
+7. Sending events if the deadband or min/max value is crossed
+8. Signal strength LEDs will glow based on the signal strength
+9. Single serial port to poll Modbus devices
+10. MQTT connection with SSL feature
+11. Upload TLS certificates from the webpage
+12. Upload firmware from the webpage via FTP
+13. Upload configuration from the webpage
+14. Download configuration via the webpage
+15. Reboot the device from the webpage
+16. If the Wi-Fi configuration switch is pressed for 5 seconds:
+17. The Wi-Fi interface will turn ON for 30 minutes if it is currently OFF.
+18. The Wi-Fi interface will turn OFF if it is currently ON.
+19.	Maximum 8 meters can able to configure
+20. Maximum 128 Registers can able to configure
+21. Value to string Mapping logic implmented to send the appropirate string to the mqtt broker for the received value from modbus
+22. BIT to string Mapping logic implmented to send the appropirate string to the mqtt broker for the received value from modbus
+23. Formula Conversion logic implemented to convert the received value from modbus based on the mapped formula and send CHANGED VALUES to the mqtt broker 
+24. In webpage already uploaded certificate files will get display.

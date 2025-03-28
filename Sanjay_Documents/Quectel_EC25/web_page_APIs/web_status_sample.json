@@ -1,0 +1,909 @@
+{
+    "DEVICE_STATUS": {
+        "SN": "9842719999",
+        "DEV_NAME": "QUECTEL_EC-25E",
+        "DEV_ID": "A10000247C9EE1",
+        "DEV_TYPE": "MODEM",
+        "DEV_MODEL": "IOT_GW",
+        "FW_VER": "EC25EFAR06A12M4G",
+        "DEVTOKEN": "db9232677ad2d008ca14b077dda0cd60",
+        "GW_TIME": "2025-01-31 17:22:12",
+        "DEV_UPTIME": "11m 10s",
+        "MEMORY_INFO": {
+            "TOTAL": "151.93 MB",
+            "AVAILABLE": "80.32 MB",
+            "USED": "71.61 MB"
+        }
+    },
+    "UPSTREAM_STATUS": {
+        "UPSTREAM_MECH": "MQTT",
+        "MQTT_BROKER": "122.166.196.34:4061",
+        "CONN_STATUS": "0",
+        "CONN_TIME": "1970-01-01 05:30:00",
+        "UPTIME": "20119d 11h 52m 12s"
+    },
+    "MODBUS_STATUS": {
+        "PORT": "1",
+        "NUM_DEV": "2",
+        "DEV_STATUS": [
+            {
+                "DEV_NAME": "COUNTER_1",
+                "DEV_ID": "1",
+                "STATUS": "1",
+                "LAST_DATA_RECV_TIME": "2025-01-31 17:22:03",
+                "NUM_VALS": "107",
+                "REG_VAL": [
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 100.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 200.000
+                    },
+                    {
+                        "NAME": "CT1_CURRENT",
+                        "FUNC_TYPE": "3",
+                        "VAL": 30.000
+                    },
+                    {
+                        "NAME": "CT2_CURRENT",
+                        "FUNC_TYPE": "3",
+                        "VAL": 40.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 500.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 666.000
+                    },
+                    {
+                        "NAME": "Cooling State",
+                        "FUNC_TYPE": "3",
+                        "VAL": "OFF"
+                    },
+                    {
+                        "NAME": "COND1 STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": "ON"
+                    },
+                    {
+                        "NAME": "Fan status",
+                        "FUNC_TYPE": "3",
+                        "VAL": "IN DELAY"
+                    },
+                    {
+                        "NAME": "HTR1 STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": "OFF"
+                    },
+                    {
+                        "NAME": "LSV1 STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": "ON"
+                    },
+                    {
+                        "NAME": "COMP2 STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": "IN DELAY"
+                    },
+                    {
+                        "NAME": "COND2 STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": "OFF"
+                    },
+                    {
+                        "NAME": "EVAP2 STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": "ON"
+                    },
+                    {
+                        "NAME": "HTR2 STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": "IN DELAY"
+                    },
+                    {
+                        "NAME": "LSV2 STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": "OFF"
+                    },
+                    {
+                        "NAME": "LAMP STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": "ON"
+                    },
+                    {
+                        "NAME": "ALARM STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": "OFF"
+                    },
+                    {
+                        "NAME": "DOOR STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": "OPEN"
+                    },
+                    {
+                        "NAME": "INPUT STATUS",
+                        "FUNC_TYPE": "3",
+                        "VAL": 222.000
+                    },
+                    {
+                        "NAME": "UNIT1 MODE",
+                        "FUNC_TYPE": "3",
+                        "VAL": "PROBEFAIL"
+                    },
+                    {
+                        "NAME": "UNIT2 MODE",
+                        "FUNC_TYPE": "3",
+                        "VAL": 7.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 555.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 666.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 777.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 888.000
+                    },
+                    {
+                        "NAME": "UNIT1 FAULT",
+                        "FUNC_TYPE": "3",
+                        "VAL": "LP FAULT"
+                    },
+                    {
+                        "NAME": "UNIT2 FAULT",
+                        "FUNC_TYPE": "3",
+                        "VAL": "OL FAULT"
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 222.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 333.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 444.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 555.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 666.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 777.000
+                    },
+                    {
+                        "NAME": "SYS_MODE",
+                        "FUNC_TYPE": "3",
+                        "VAL": 888.000
+                    },
+                    {
+                        "NAME": "COMP1 SETPOINT",
+                        "FUNC_TYPE": "3",
+                        "VAL": 99.900
+                    },
+                    {
+                        "NAME": "COMP2 SETPOINT",
+                        "FUNC_TYPE": "3",
+                        "VAL": 100.400
+                    },
+                    {
+                        "NAME": "REG_UNITID",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1111.000
+                    },
+                    {
+                        "NAME": "BAUDRATE",
+                        "FUNC_TYPE": "3",
+                        "VAL": 2222.000
+                    },
+                    {
+                        "NAME": "UNIT SELECTION",
+                        "FUNC_TYPE": "3",
+                        "VAL": "UNIT 2 ONLY"
+                    },
+                    {
+                        "NAME": "MAX SP LIMIT",
+                        "FUNC_TYPE": "3",
+                        "VAL": 444.400
+                    },
+                    {
+                        "NAME": "MIN SP LIMIT",
+                        "FUNC_TYPE": "3",
+                        "VAL": 555.500
+                    },
+                    {
+                        "NAME": "HT_SETPOINT",
+                        "FUNC_TYPE": "3",
+                        "VAL": 666.600
+                    },
+                    {
+                        "NAME": "LT_SETPOINT",
+                        "FUNC_TYPE": "3",
+                        "VAL": 777.700
+                    },
+                    {
+                        "NAME": "DIFFERENTIAL1",
+                        "FUNC_TYPE": "3",
+                        "VAL": 888.800
+                    },
+                    {
+                        "NAME": "DIFFERENTIAL2",
+                        "FUNC_TYPE": "3",
+                        "VAL": 999.900
+                    },
+                    {
+                        "NAME": "QFT_SETPOINT",
+                        "FUNC_TYPE": "3",
+                        "VAL": 111.100
+                    },
+                    {
+                        "NAME": "QFD_DURATION",
+                        "FUNC_TYPE": "3",
+                        "VAL": 222.200
+                    },
+                    {
+                        "NAME": "ROOM PRB CALIB",
+                        "FUNC_TYPE": "3",
+                        "VAL": 333.300
+                    },
+                    {
+                        "NAME": "COMP1 TIMEDELAY",
+                        "FUNC_TYPE": "3",
+                        "VAL": 444.400
+                    },
+                    {
+                        "NAME": "COMP2 TIMEDELAY",
+                        "FUNC_TYPE": "3",
+                        "VAL": 170.000
+                    },
+                    {
+                        "NAME": "DRIPTIME",
+                        "FUNC_TYPE": "3",
+                        "VAL": 6666.000
+                    },
+                    {
+                        "NAME": "COMP STATUS IN PRBFAIL",
+                        "FUNC_TYPE": "3",
+                        "VAL": 7777.000
+                    },
+                    {
+                        "NAME": "POST DRIP TIME",
+                        "FUNC_TYPE": "3",
+                        "VAL": 8888.000
+                    },
+                    {
+                        "NAME": "COND TIME DELAY",
+                        "FUNC_TYPE": "3",
+                        "VAL": 9999.000
+                    },
+                    {
+                        "NAME": "COND DUR DEFROST",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1111.000
+                    },
+                    {
+                        "NAME": "SUPPORT COMP ON DELAY",
+                        "FUNC_TYPE": "3",
+                        "VAL": 2222.000
+                    },
+                    {
+                        "NAME": "SWAP SET POINT",
+                        "FUNC_TYPE": "3",
+                        "VAL": 3333.000
+                    },
+                    {
+                        "NAME": "HT ALARM DELAY",
+                        "FUNC_TYPE": "3",
+                        "VAL": 4444.000
+                    },
+                    {
+                        "NAME": "CT1_OVER LOAD",
+                        "FUNC_TYPE": "3",
+                        "VAL": 555.500
+                    },
+                    {
+                        "NAME": "CT1_UNDER LOAD",
+                        "FUNC_TYPE": "3",
+                        "VAL": 666.600
+                    },
+                    {
+                        "NAME": "CT2_OVER LOAD",
+                        "FUNC_TYPE": "3",
+                        "VAL": 777.700
+                    },
+                    {
+                        "NAME": "CT2_UNDER LOAD",
+                        "FUNC_TYPE": "3",
+                        "VAL": 888.800
+                    },
+                    {
+                        "NAME": "CT_SENSE_DLY",
+                        "FUNC_TYPE": "3",
+                        "VAL": 0.000
+                    },
+                    {
+                        "NAME": "CT_ALTYPE",
+                        "FUNC_TYPE": "3",
+                        "VAL": 9999.000
+                    },
+                    {
+                        "NAME": "CT1_CALLIB",
+                        "FUNC_TYPE": "3",
+                        "VAL": 111.100
+                    },
+                    {
+                        "NAME": "CT2_CALLIB",
+                        "FUNC_TYPE": "3",
+                        "VAL": 222.200
+                    },
+                    {
+                        "NAME": "EVAPSTOPTC",
+                        "FUNC_TYPE": "3",
+                        "VAL": 333.300
+                    },
+                    {
+                        "NAME": "EVAPTIMEDELAY",
+                        "FUNC_TYPE": "3",
+                        "VAL": 4444.000
+                    },
+                    {
+                        "NAME": "EVAP STATUS COMPOFF1",
+                        "FUNC_TYPE": "3",
+                        "VAL": 5555.000
+                    },
+                    {
+                        "NAME": "EVAP STATUS COMPOFF2",
+                        "FUNC_TYPE": "3",
+                        "VAL": 6666.000
+                    },
+                    {
+                        "NAME": "EVAPDIFFERENTIAL",
+                        "FUNC_TYPE": "3",
+                        "VAL": 777.700
+                    },
+                    {
+                        "NAME": "COIL1 PRB CALIB",
+                        "FUNC_TYPE": "3",
+                        "VAL": 888.800
+                    },
+                    {
+                        "NAME": "COIL2 PRB CALIB",
+                        "FUNC_TYPE": "3",
+                        "VAL": 999.900
+                    },
+                    {
+                        "NAME": "EVAP DUR DEFROST1",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1111.000
+                    },
+                    {
+                        "NAME": "EVAP DUR DEFROST2",
+                        "FUNC_TYPE": "3",
+                        "VAL": 2222.000
+                    },
+                    {
+                        "NAME": "EVAP DUR DOOROPEN",
+                        "FUNC_TYPE": "3",
+                        "VAL": 3333.000
+                    },
+                    {
+                        "NAME": "DEFROST TYPE COMP1",
+                        "FUNC_TYPE": "3",
+                        "VAL": 4444.000
+                    },
+                    {
+                        "NAME": "DEFROST TYPE COMP2",
+                        "FUNC_TYPE": "3",
+                        "VAL": 5555.000
+                    },
+                    {
+                        "NAME": "DEFROST TIME CALC",
+                        "FUNC_TYPE": "3",
+                        "VAL": 6666.000
+                    },
+                    {
+                        "NAME": "DEFROST FREQUENCY",
+                        "FUNC_TYPE": "3",
+                        "VAL": 7777.000
+                    },
+                    {
+                        "NAME": "DEFROST DURATION",
+                        "FUNC_TYPE": "3",
+                        "VAL": 8888.000
+                    },
+                    {
+                        "NAME": "DEFROST STOP TEMP",
+                        "FUNC_TYPE": "3",
+                        "VAL": 999.900
+                    },
+                    {
+                        "NAME": "POWER UP DEFROST DELAY",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1111.000
+                    },
+                    {
+                        "NAME": "DEFROST DUR COILFAIL",
+                        "FUNC_TYPE": "3",
+                        "VAL": 2222.000
+                    },
+                    {
+                        "NAME": "DEFROST SELECT",
+                        "FUNC_TYPE": "3",
+                        "VAL": "BOTH"
+                    },
+                    {
+                        "NAME": "PUMPDOWN COMP1",
+                        "FUNC_TYPE": "3",
+                        "VAL": 4444.000
+                    },
+                    {
+                        "NAME": "PUMPDOWN COMP2",
+                        "FUNC_TYPE": "3",
+                        "VAL": 5555.000
+                    },
+                    {
+                        "NAME": "DIGITAL INPUT TYPE",
+                        "FUNC_TYPE": "3",
+                        "VAL": 6666.000
+                    },
+                    {
+                        "NAME": "HP1 ENBDSB",
+                        "FUNC_TYPE": "3",
+                        "VAL": 7777.000
+                    },
+                    {
+                        "NAME": "LP1 ENBDSB",
+                        "FUNC_TYPE": "3",
+                        "VAL": 8888.000
+                    },
+                    {
+                        "NAME": "SPPR1 ENBDSB",
+                        "FUNC_TYPE": "3",
+                        "VAL": 9999.000
+                    },
+                    {
+                        "NAME": "HP2 ENBDSB",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1111.000
+                    },
+                    {
+                        "NAME": "LP2 ENBDSB",
+                        "FUNC_TYPE": "3",
+                        "VAL": 2222.000
+                    },
+                    {
+                        "NAME": "SPPR2 ENBDSB",
+                        "FUNC_TYPE": "3",
+                        "VAL": 3333.000
+                    },
+                    {
+                        "NAME": "KEYPADLOCK",
+                        "FUNC_TYPE": "3",
+                        "VAL": 4444.000
+                    },
+                    {
+                        "NAME": "FACTORYRESET",
+                        "FUNC_TYPE": "3",
+                        "VAL": 5555.000
+                    },
+                    {
+                        "NAME": "RESERVED",
+                        "FUNC_TYPE": "3",
+                        "VAL": 6666.000
+                    },
+                    {
+                        "NAME": "Control temperature",
+                        "FUNC_TYPE": "3",
+                        "VAL": 777.700
+                    },
+                    {
+                        "NAME": "COIL1 TEMP",
+                        "FUNC_TYPE": "3",
+                        "VAL": 888.800
+                    },
+                    {
+                        "NAME": "COIL2 TEMP",
+                        "FUNC_TYPE": "3",
+                        "VAL": 999.900
+                    },
+                    {
+                        "NAME": "POWER",
+                        "FUNC_TYPE": "1",
+                        "VAL": 1
+                    },
+                    {
+                        "NAME": "MUTE ALARM",
+                        "FUNC_TYPE": "1",
+                        "VAL": 1
+                    },
+                    {
+                        "NAME": "DEFROST 1",
+                        "FUNC_TYPE": "1",
+                        "VAL": 1
+                    },
+                    {
+                        "NAME": "DEFROST 2",
+                        "FUNC_TYPE": "1",
+                        "VAL": 1
+                    },
+                    {
+                        "NAME": "LAMP CONTROL",
+                        "FUNC_TYPE": "1",
+                        "VAL": 1
+                    },
+                    {
+                        "NAME": "QUICK FREEZE 1",
+                        "FUNC_TYPE": "1",
+                        "VAL": 0
+                    }
+                ]
+            },
+            {
+                "DEV_NAME": "COUNTER_2",
+                "DEV_ID": "2",
+                "STATUS": "1",
+                "LAST_DATA_RECV_TIME": "2025-01-31 17:22:11",
+                "NUM_VALS": "58",
+                "REG_VAL": [
+                    {
+                        "NAME": "Control temperature",
+                        "FUNC_TYPE": "4",
+                        "VAL": "Sensor failure"
+                    },
+                    {
+                        "NAME": "Sensor 2 Temp",
+                        "FUNC_TYPE": "4",
+                        "VAL": "Sensor not enabled"
+                    },
+                    {
+                        "NAME": "Sensor 3 Temp",
+                        "FUNC_TYPE": "4",
+                        "VAL": 200.00
+                    },
+                    {
+                        "NAME": "Error Alarm",
+                        "FUNC_TYPE": "4",
+                        "VAL": "0000000000101100"
+                    },
+                    {
+                        "NAME": "Operating Status",
+                        "FUNC_TYPE": "4",
+                        "VAL": "0000000000110111"
+                    },
+                    {
+                        "NAME": "Controller Model",
+                        "FUNC_TYPE": "4",
+                        "VAL": 111.000
+                    },
+                    {
+                        "NAME": "Software Version Number",
+                        "FUNC_TYPE": "4",
+                        "VAL": 222.000
+                    },
+                    {
+                        "NAME": "Param Table",
+                        "FUNC_TYPE": "4",
+                        "VAL": 333.000
+                    },
+                    {
+                        "NAME": "Sensor Measurement Stability",
+                        "FUNC_TYPE": "3",
+                        "VAL": 100.000
+                    },
+                    {
+                        "NAME": "Sensor 1 Offset",
+                        "FUNC_TYPE": "3",
+                        "VAL": 10.00
+                    },
+                    {
+                        "NAME": "Sensor 2 Offset",
+                        "FUNC_TYPE": "3",
+                        "VAL": 20.00
+                    },
+                    {
+                        "NAME": "Sensor 2 enable",
+                        "FUNC_TYPE": "3",
+                        "VAL": 400.000
+                    },
+                    {
+                        "NAME": "Sensor 3 Offset",
+                        "FUNC_TYPE": "3",
+                        "VAL": 40.00
+                    },
+                    {
+                        "NAME": "Sensor 3 Mode",
+                        "FUNC_TYPE": "3",
+                        "VAL": 666.000
+                    },
+                    {
+                        "NAME": "Selected sensor",
+                        "FUNC_TYPE": "3",
+                        "VAL": 0.000
+                    },
+                    {
+                        "NAME": "Decimal point selection",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1.000
+                    },
+                    {
+                        "NAME": "",
+                        "FUNC_TYPE": "3",
+                        "VAL": -98.00
+                    },
+                    {
+                        "NAME": "Set temp min value",
+                        "FUNC_TYPE": "3",
+                        "VAL": -100.00
+                    },
+                    {
+                        "NAME": "Set temp max value",
+                        "FUNC_TYPE": "3",
+                        "VAL": -99.00
+                    },
+                    {
+                        "NAME": "Operating Mode",
+                        "FUNC_TYPE": "3",
+                        "VAL": 2.000
+                    },
+                    {
+                        "NAME": "Temperature Diff",
+                        "FUNC_TYPE": "3",
+                        "VAL": 0.00
+                    },
+                    {
+                        "NAME": "Energy saving mode Temp Offset",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1.000
+                    },
+                    {
+                        "NAME": "Compressor delay after Power-on",
+                        "FUNC_TYPE": "3",
+                        "VAL": 2.000
+                    },
+                    {
+                        "NAME": "Min downtime",
+                        "FUNC_TYPE": "3",
+                        "VAL": 0.000
+                    },
+                    {
+                        "NAME": "Max running time",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1.000
+                    },
+                    {
+                        "NAME": "Compressor working time (when sesor fails)",
+                        "FUNC_TYPE": "3",
+                        "VAL": 0.000
+                    },
+                    {
+                        "NAME": "Compressor downtime (when sensor fails)",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1.000
+                    },
+                    {
+                        "NAME": "Defrost mode",
+                        "FUNC_TYPE": "3",
+                        "VAL": 222.000
+                    },
+                    {
+                        "NAME": "Hot gas defrost enable",
+                        "FUNC_TYPE": "3",
+                        "VAL": 4.000
+                    },
+                    {
+                        "NAME": "Defrost cycle",
+                        "FUNC_TYPE": "3",
+                        "VAL": 7.000
+                    },
+                    {
+                        "NAME": "Defrost cycle upper limit",
+                        "FUNC_TYPE": "3",
+                        "VAL": 555.000
+                    },
+                    {
+                        "NAME": "Defrost end temp",
+                        "FUNC_TYPE": "3",
+                        "VAL": 566.00
+                    },
+                    {
+                        "NAME": "Defrost time",
+                        "FUNC_TYPE": "3",
+                        "VAL": 777.000
+                    },
+                    {
+                        "NAME": "Defrost delay output",
+                        "FUNC_TYPE": "3",
+                        "VAL": 888.000
+                    },
+                    {
+                        "NAME": "Defrost display",
+                        "FUNC_TYPE": "3",
+                        "VAL": 2.000
+                    },
+                    {
+                        "NAME": "High temp alarm sheilding",
+                        "FUNC_TYPE": "3",
+                        "VAL": 4.000
+                    },
+                    {
+                        "NAME": "Dripping time",
+                        "FUNC_TYPE": "3",
+                        "VAL": 222.000
+                    },
+                    {
+                        "NAME": "Defrost enable on power on",
+                        "FUNC_TYPE": "3",
+                        "VAL": 333.000
+                    },
+                    {
+                        "NAME": "Low temp alarm temp difference",
+                        "FUNC_TYPE": "3",
+                        "VAL": 444.000
+                    },
+                    {
+                        "NAME": "High temp alarm temp difference",
+                        "FUNC_TYPE": "3",
+                        "VAL": 555.000
+                    },
+                    {
+                        "NAME": "Power on alarm shielding time",
+                        "FUNC_TYPE": "3",
+                        "VAL": 666.000
+                    },
+                    {
+                        "NAME": "Alarm delay",
+                        "FUNC_TYPE": "3",
+                        "VAL": 777.000
+                    },
+                    {
+                        "NAME": "Condensor upper limit alarm temp",
+                        "FUNC_TYPE": "3",
+                        "VAL": 888.000
+                    },
+                    {
+                        "NAME": "Condensor temp alarm delay",
+                        "FUNC_TYPE": "3",
+                        "VAL": 999.000
+                    },
+                    {
+                        "NAME": "Buzzer alarm setting",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1004.000
+                    },
+                    {
+                        "NAME": "External alarm settings",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1111.000
+                    },
+                    {
+                        "NAME": "External alarm delay",
+                        "FUNC_TYPE": "3",
+                        "VAL": 2222.000
+                    },
+                    {
+                        "NAME": "Whether ext alarm stops output",
+                        "FUNC_TYPE": "3",
+                        "VAL": 2.000
+                    },
+                    {
+                        "NAME": "Fan operating mode",
+                        "FUNC_TYPE": "3",
+                        "VAL": 4444.000
+                    },
+                    {
+                        "NAME": "Fan operating mode (during defrost)",
+                        "FUNC_TYPE": "3",
+                        "VAL": 5555.000
+                    },
+                    {
+                        "NAME": "Fan start delay after power on",
+                        "FUNC_TYPE": "3",
+                        "VAL": 6666.000
+                    },
+                    {
+                        "NAME": "Fan start delay after defrost",
+                        "FUNC_TYPE": "3",
+                        "VAL": 7777.000
+                    },
+                    {
+                        "NAME": "Fan set operating temperature",
+                        "FUNC_TYPE": "3",
+                        "VAL": 8888.000
+                    },
+                    {
+                        "NAME": "Fan operating temp difference",
+                        "FUNC_TYPE": "3",
+                        "VAL": 9999.000
+                    },
+                    {
+                        "NAME": "Email address",
+                        "FUNC_TYPE": "3",
+                        "VAL": 1111.000
+                    },
+                    {
+                        "NAME": "Commn port selection",
+                        "FUNC_TYPE": "3",
+                        "VAL": 2222.000
+                    },
+                    {
+                        "NAME": "Key Lock settings",
+                        "FUNC_TYPE": "3",
+                        "VAL": 3333.000
+                    },
+                    {
+                        "NAME": "Working status",
+                        "FUNC_TYPE": "3",
+                        "VAL": "Power Off"
+                    }
+                ]
+            }
+        ]
+    },
+    "MODEM_STATUS": {
+        "STATUS": "Connected",
+        "ACTIVE_SIM_SLOT": "SLOT_1",
+        "SIM_SLOT_STATUS": "SIM CARD Is READY",
+        "PPP_IP": "100.80.178.67",
+        "SIG_STRENGTH": "56",
+        "REG_STATUS": "Registered",
+        "NW_TYPE": "CDMA [2G/3G]",
+        "SERVICE_PROVIDER": "IND airtel",
+        "CONN_TIME": "2025-01-31 17:18:01",
+        "UPTIME": "4m 11s"
+    },
+    "WIFI_STATUS": {
+        "NUM_CONNECTIONS": "2",
+        "MODE_STATUS": [
+            {
+                "CONN_TYPE": "AP_1",
+                "STATUS": "Established",
+                "SSID": "CMS_IOTGW_2.4GHZ",
+                "FREQUENCY": "2.4GHz",
+                "SECURITY": "WPA2_PSK",
+                "ESTABLISHED_TIME": "2025-01-31 17:11:39",
+                "UP_TIME": "10m 33s"
+            },
+            {
+                "CONN_TYPE": "AP_2",
+                "STATUS": "Established",
+                "SSID": "CMS_IOTGW_5.0GHZ",
+                "FREQUENCY": "5.0GHz",
+                "SECURITY": "WPA2_PSK",
+                "ESTABLISHED_TIME": "2025-01-31 17:11:39",
+                "UP_TIME": "10m 33s"
+            }
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "FTP_SERVER_IP" : "192.168.10.127",
+    "FTP_PORT_NUM" : "6262",
+    "FTP_SERVER_UNAME" : "sanjay",
+    "FTP_SERVER_PASS" : "softel",
+    "FTP_SERVER_FILE_PATH" : "WEBUP_FW_TEST_05Feb2025.bin"
+}
+
+
+
+In devie reference cmd
+curl -v -u "sanjay:softel" "ftp://192.168.225.56:6262/auth_sample.json" -o "/usrdata/sanjay_ftp.txt"
+curl -v -u "sanjay:softel" "ftp://192.168.225.56:6262/auth_sample.json" -o "/usrdata/sanjay_ftp.txt" --connect-timeout 5
+
+
+curl -v -u "sanjay:softel" "ftp://192.168.10.127:6262/auth_sample.json" -o "/usrdata/sanjay_ftp.txt" --connect-timeout 5

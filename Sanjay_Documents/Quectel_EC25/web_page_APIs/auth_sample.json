@@ -1,0 +1,15 @@
+FOR LOGIN
+{
+    "mode": "login",
+    "username": "Admin",
+    "password": "AdminCMS@321"
+}
+ 
+
+FOR CHANGING PASSWORD
+{
+    "mode": "change_password",
+    "username": "Admin",
+    "old_password": "AdminCMS@321",
+    "new_password": "NewSecurePassword123"
+}

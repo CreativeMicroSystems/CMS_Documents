@@ -1,0 +1,27 @@
+MEETING DISCUSSION
+ 
+now upload TLS is based on file upload ask sir is it correct
+Upgrade FW we developed based on FTP tech to upload file -- ok
+ask weather upload cfg screen required -- like upload tls from PC to device
+ask weather download cfg screen required -- from device
+also ask though which gateway the mqtt publish going to happen -- via modem 
+also ask our device will work as STA and AP mode (already asked just confirmation)
+ask mqtt diag want to be there 
+mqtt not connected --> mqtt conn error msg nee to display in status screen
+not comm met can display the existing datum in screen
+resp tout <2
+resp tout in mill sec 100ms - 5000ms only in steps of 100ms  100, 200, 300, ....
+
+
+
+IOTGW on QUECTEL EC25 pending tasks
+
+site issue on updation of wrong value eg : instead of 15.8 sending 15 and negative value is sending as junk (dtat type issue)
+Publish Device register message at the startup development completed still testing need to be done with SAMPLE Alibaba cloud broker
+Development of webpage for upgrade firmware, status screen
+In existing code the TLS is certificates are fixed now it should be generic based on the web page cfgs
+Upload firmware via Web page need to be developed in backend
+WIFI module issue need to be fixed in Hardware - coordination with giridhar
+If wifi is fixed then in web page and backend the wifi related things need to be enabled
+Hardware validation program for IOTGW hardware need to be done (already 50% completed)
+In existing code some issues are there that need to be test and fix

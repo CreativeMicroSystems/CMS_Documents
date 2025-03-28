@@ -1,0 +1,55 @@
+WiFi work mode : (0-STA/1-AP0/2-AP0+STA/3-AP0+AP1)
+
+[Mode : STA] For Connecting with Hotspot [Quectel EC25 will act as wifi client] [Mode : STA]
+	->STA ssid : (maximum size 32)
+	->STA type of authentication : (0-OPEN/1-WPA PSK/2-WPA2 PSK)
+	->STA WPA PSK pairwise : (0-AUTH/1-TKIP/2-AES)
+	->STA WPA PSK password
+	
+[Mode : AP] For Establishing Hotspot[2.4 GHz] [Quectel EC25 will act as HOTSPOT] 
+	->WiFi index 0 ssid : (maximun size 32)
+	->WiFi index 0 IEEE 802.11 mode : (0-b/1-bg/2-bgn/3-a/4-an/5-ac)
+	->WiFi index 0 Bandwidth : (0-20MHz/1-40MHz/2-80MHz)
+	->WiFi index 0 channel
+	->WiFi index 0 maximun station : (1-16)
+	->WiFi index 0 type of authentication : (0-OPEN/1-WPA PSK/2-WPA2 PSK)
+	->WiFi index 0 WPA PSK pairwise : (0-AUTH/1-TKIP/2-AES)
+	->WiFi index 0 WPA PSK password
+	
+[Mode : STA+AP] For Connecting with Hotspot[2.4 GHz] and establishing HOTSPOT [Quectel EC25 will act as both wifi client and Hotspot] 
+	Configuring HOTSPOT parameters
+		->WiFi index 0 ssid : (maximun size 32)
+		->WiFi index 0 IEEE 802.11 mode : (0-b/1-bg/2-bgn/3-a/4-an/5-ac)
+		->WiFi index 0 Bandwidth : (0-20MHz/1-40MHz/2-80MHz)
+		->WiFi index 0 channel
+		->WiFi index 0 maximun station : (1-16)
+		->WiFi index 0 type of authentication : (0-OPEN/1-WPA PSK/2-WPA2 PSK)
+		->WiFi index 0 WPA PSK pairwise : (0-AUTH/1-TKIP/2-AES)
+		->WiFi index 0 WPA PSK password
+		
+	Configuring WIFI parameters
+		->STA ssid : (maximum size 32)
+		->STA type of authentication : (0-OPEN/1-WPA PSK/2-WPA2 PSK)
+		->STA WPA PSK pairwise : (0-AUTH/1-TKIP/2-AES)
+		->STA WPA PSK password
+		
+[Mode : AP+AP] For establishing HOTSPOT[2.4GHz & 5 GHz] [Quectel EC25 will act as hotspot] 
+	Configuring HOTSPOT 2.4GHz parameters
+		-> WiFi index 0 ssid : (maximun size 32)
+		-> WiFi index 0 IEEE 802.11 mode : (0-b/1-bg/2-bgn/3-a/4-an/5-ac)
+		-> WiFi index 0 Bandwidth : (0-20MHz/1-40MHz/2-80MHz)
+		-> WiFi index 0 channel
+		-> WiFi index 0 maximun station : (1-16)
+		-> WiFi index 0 type of authentication : (0-OPEN/1-WPA PSK/2-WPA2 PSK)
+		-> WiFi index 0 WPA PSK pairwise : (0-AUTH/1-TKIP/2-AES)
+		-> WiFi index 0 WPA PSK password
+	
+	Configuring HOTSPOT 5GHz parameters
+		-> WiFi index 1 ssid : (maximun size 32): QUECTEL_CMS_TEST_HOTSPOT_5GHZ
+		-> WiFi index 1 IEEE 802.11 mode : (0-b/1-bg/2-bgn/3-a/4-an/5-ac): 4
+		-> WiFi index 1 Bandwidth : (0-20MHz/1-40MHz/2-80MHz): 0
+		-> WiFi index 1 channel
+		-> WiFi index 1 maximun station : (1-16)
+		-> WiFi index 1 type of authentication : (0-OPEN/1-WPA PSK/2-WPA2 PSK)
+		-> WiFi index 1 WPA PSK pairwise : (0-AUTH/1-TKIP/2-AES)
+		-> WiFi index 1 WPA PSK password

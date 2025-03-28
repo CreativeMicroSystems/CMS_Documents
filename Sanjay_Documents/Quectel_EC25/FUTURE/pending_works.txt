@@ -1,0 +1,57 @@
+----------- PENDING WORKS-----------
+1. Change logic for config switch from serial cfg to wifi config - finished
+2. Sim switching development -- in progress
+3. Process monitor development -- finished
+4. change server type to ALIBABA server or Other server type - in progress
+5. change data type store in existing code. (for site bugs)
+6. add 8 combinations in byte order  (already 4 available) - in profress
+7. reboot log schript developed
+8. Hc message to Pmon - finished
+10. Default switch logic changes to sh file - finished
+11. storing values in the float data type  - finished
+12. reboot log for all in the main code - finished
+13. buffer size in sd card resend msg need to be increased
+14. *** Error in `/usrdata/cms/bin/IOT_GW_FW': double free or corruption (!prev): 0x00808398 ***
+	Aborted
+	need to fix the above error
+15. for sms need to add proper dbg logs
+16. EVENT MESSAGE NEED TO ADD EVERYWHERE AND before ALL device reboot command.
+17. db_check fun name chould be changed becoz min and max also handling inside that function
+
+Logic Note:
+If wifi cfg sw pressed for 5sec then the wifi interface will ON for 30mins if it is aready off
+If wifi cfg sw pressed for 5sec then the wifi interface will OFF if it already on
+cyc periodicity 15sec, 30sec, 1min, 5min, 10min, 15 min, ......, 55min, 1hr.
+/* 802.11a/b/bg do not configure bandwidth */
+/* setting SSID */ maximum size 32 bytes
+tell aarthi that if the modem or mqtt status is dis connected then the below boxex no need to show
+tell aarthi to add active sim slot in web page in modem status
+ask priya for rcS file
+ask mam for enabling HC , EVE
+remove serial num from json
+val to str mapping, bit str mapping and fomula conversion files need to implement in generate_config.exe file
+signel strenght in DBM need to display in dev status in WEB UI
+Iotgw reboot log need to take a copy in sd card
+check if the sd card is troing the message and sending after reconnection
+change reboot log logis as save_reboot_log.sh in reboot.cgi 
+save and restRT ap2 EYE CLOSE
+scroll bar issue
+need to fix the pinging issue on 5.0 and slo from dev to ftp server
+**** save reboot log size miiting and position changing
+**** device uptim  need to be changed as md h m s -- fixed
+**** upload tls have an MOVE mv comaand to reduyce loos during sudden intrupt
+PASSPHARSE 32 LOCK
+bir_string -- 6 data type adding 
+reg list center alignment
+number of coils and start coil address for fun 01 and 02
+in upload tls bfore and after BEGIN and END certifite some junk strings are filling in the .pem file
+enabling HC message not working in WEB page
+REG NAME STARTS WITH 0
+NUM regs starts with 1
+Slave Id already exists ,please enter the unique Slave Id --> Slave Id already exists, please enter the unique Slave Id
+******* traffic monitor first msg know===== some non junky query
+MENUS ==> MENU
+response time out is not sending in configured tout +1seconds it is taking
+in traffic monito if the webpage is minimized ONLY RX msg is coming 
+reboot and firmware upload cgi not logging the rebooting properly
+rmv gen def cfg in config.c and add that thing in startup.sh

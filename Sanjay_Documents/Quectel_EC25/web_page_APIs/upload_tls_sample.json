@@ -1,0 +1,36 @@
+send this json to the upload_TLS_cfg.cgi api
+{
+    "TLS_ENABLE" : "1",
+    "ENABLE_PASSPHRASE" : "1",
+    "TLS_PASSPHRASE" : "sample_pass",
+    "EN_SSL_CA_FILE" : "1", 
+    "NUM_SSL_CERTIFICATES" : "2",
+    "EN_SSL_CERT_1" : "1",
+    "EN_SSL_PK_1" : "1", 
+    "EN_SSL_CERT_2" : "1", 
+    "EN_SSL_PK_2" : "0", 
+    "SSL_CA_FILE_NAME" : "CA_file.txt",
+    "SSL_CERT_1_FILE_NAME" : "CERT_1_file.txt",
+    "SSL_PK_1_FILE_NAME" : "PK_1_file.txt",
+    "SSL_CERT_2_FILE_NAME" : "CER_2_file.txt",
+    "SSL_PK_2_FILE_NAME" : "PK_2_file.txt",
+}
+
+
+
+after sending json to upload_TLS_cfg.cgi api send files one by one to <upload_TLS_files.cgi> api with the below <FILE_NAME> header
+FILE_NAME is a header to send the file names
+
+ca file ==> SSL_CA_FILE.pem
+ssl certificate 1 file ==> SSL_CERT_FILE_1.cert
+ssl private key 1 file ==> SSL_PK_FILE_1.key
+ssl certificate 2 file ==> SSL_CERT_FILE_2.cert
+ssl private key 2 file ==> SSL_PK_FILE_2.key
+...
+...
+and so on
+
+
+
+
+

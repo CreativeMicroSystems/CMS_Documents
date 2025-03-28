@@ -1,0 +1,7 @@
+ARDUINO IDE INSTALLATION
+
+1 - Go to  " https://www.arduino.cc/en/software "
+2 - Click the windows 10 and latest version
+3 - Click download
+4 - After downloading install the arduino IDE
+5 - Also install the necessary libraries

@@ -1,0 +1,10 @@
+ESP_32 ISSUES
+
+1 -  SOMETIMES THE INTERNAL FLASH IS GETTING ERASED (1/100) TIMES.
+
+2 -  Sometimes Default swith pin is triggered eventhough without pressing the Default switch.(1/500)
+
+3 -  SOMETIMES can't flash the files or code in the esp32 only this can be rectified by removing and plugging in the console cable but while 
+     plugging again will cause the PC to hang.
+
+4 - 

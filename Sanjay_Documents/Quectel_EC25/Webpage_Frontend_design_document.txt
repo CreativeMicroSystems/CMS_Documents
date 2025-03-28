@@ -1,0 +1,266 @@
+General Settings
+	Device ID
+	Device Name
+	Device Type
+	Location
+	Firmware Version
+
+GPRS SETTINGS
+	PPP_IP
+	PPP_Username
+	PPP_Password
+	PPP_APN
+
+MQTT CFG
+	Server Type (dropdown)
+		CMS_CLOUD_MQTT_BROKER - 1
+			Broker IP (Ip address validation)
+			Broker Port
+			Client ID
+			------------
+			Pub Topic
+			Sub Topic
+			-----------
+			HC Periodicity (in seconds)
+			Cyclic Periodicity (in seconds)
+			--------------
+			Enable Auth (checkbox)
+				##enabled##
+					Username
+					Password
+					
+		OTHER_MQTT_SERVERS - 2
+			Broker IP (Ip address validation)
+			Broker Port
+			Client ID
+			------------
+			Pub Topic
+			Sub Topic
+			-------------
+			HC Periodicity (in seconds)
+			Cyclic Periodicity (in seconds)
+			------------
+			Enable Auth (checkbox)
+				##enabled##
+					Username
+					Password
+					
+		ALIBABA_SERVER  - 3
+			Broker IP (Ip address validation)
+			Broker Port
+			Client ID
+			-----------
+			Pub Topic
+			Sub Topic
+			------------
+			HC Periodicity (in seconds)
+			Cyclic Periodicity (in seconds)
+			------------
+			Product Key
+			Product Secret
+			------------
+			Enable Auth (checkbox)
+				##enabled##
+					Username
+					Password
+
+RestAPI Settings
+	Enable Auth (checkbox)
+		##enabled##
+			Username
+			Password
+	Event URL
+	Cyclic Periodicity (in seconds)
+
+Hotspot Settings
+	Hotspot mode (dropdown)
+		STA Mode - 0
+			SSID
+			Auth type (drop down)
+				Open		       - 0
+				WPA Personal       - 1 
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+				WPA2 Personal      - 2
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+		AP Mode - 1
+			Mode (drop down)
+				IEEE 802.11b (2.4 GHz)   - 0
+				IEEE 802.11bg (2.4 GHz)  - 1
+				IEEE 802.11bgn (2.4 GHz) - 2
+				IEEE 802.11a (5 GHz) 	 - 3
+				IEEE 802.11an (5 GHz) 	 - 4
+				IEEE 802.11ac (5 GHz) 	 - 5
+			Bandwidth (drop down)
+				20 MHz bandwidth - 0
+				40 MHz bandwidth - 1
+				80 MHz bandwidth - 2
+			Channel
+			SSID
+			Auth type (drop down)
+				Open		       - 0
+				WPA Personal       - 1 
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+				WPA2 Personal      - 2
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+				WPA&WPA2 Personal  - 3
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+			Group Rekey (in seconds)
+			Defualt IP (Ip address validation)
+		STA+AP Mode - 2
+			--- STA CONFIGURATIONS ---
+			SSID
+			Auth type (drop down)
+				Open		       - 0
+				WPA Personal       - 1 
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+				WPA2 Personal      - 2
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+			
+			--- AP CONFIGURATIONS ---
+			Mode (drop down)
+				IEEE 802.11b (2.4 GHz)   - 0
+				IEEE 802.11bg (2.4 GHz)  - 1
+				IEEE 802.11bgn (2.4 GHz) - 2
+				IEEE 802.11a (5 GHz) 	 - 3
+				IEEE 802.11an (5 GHz) 	 - 4
+				IEEE 802.11ac (5 GHz) 	 - 5
+			Bandwidth (drop down)
+				20 MHz bandwidth - 0
+				40 MHz bandwidth - 1
+				80 MHz bandwidth - 2
+			Channel
+			SSID
+			Auth type (drop down)
+				Open		       - 0
+				WPA Personal       - 1 
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+				WPA2 Personal      - 2
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+				WPA&WPA2 Personal  - 3
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+			Group Rekey (in seconds)
+			Defualt IP (Ip address validation)
+
+		AP+AP Mode - 3
+			--- AP 1 CONFIGURATIONS ---
+			AP_mode (drop down)
+				IEEE 802.11b (2.4 GHz)   - 0
+				IEEE 802.11bg (2.4 GHz)  - 1
+				IEEE 802.11bgn (2.4 GHz) - 2
+				IEEE 802.11a (5 GHz) 	 - 3
+				IEEE 802.11an (5 GHz) 	 - 4
+				IEEE 802.11ac (5 GHz) 	 - 5
+			Bandwidth (drop down)
+				20 MHz bandwidth - 0
+				40 MHz bandwidth - 1
+				80 MHz bandwidth - 2
+			Channel
+			SSID
+			Auth type (drop down)
+				Open		       - 0
+				WPA Personal       - 1 
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+				WPA2 Personal      - 2
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+				WPA&WPA2 Personal  - 3
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+			Group Rekey (in seconds)
+			Defualt IP (Ip address validation)
+
+			--- AP 2 CONFIGURATIONS ---
+			AP_mode (drop down)
+				IEEE 802.11b (2.4 GHz)   - 0
+				IEEE 802.11bg (2.4 GHz)  - 1
+				IEEE 802.11bgn (2.4 GHz) - 2
+				IEEE 802.11a (5 GHz) 	 - 3
+				IEEE 802.11an (5 GHz) 	 - 4
+				IEEE 802.11ac (5 GHz) 	 - 5
+			Bandwidth (drop down)
+				20 MHz bandwidth - 0
+				40 MHz bandwidth - 1
+				80 MHz bandwidth - 2
+			Channel
+			SSID
+			Auth type (drop down)
+				Open		       - 0
+				WPA Personal       - 1 
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+				WPA2 Personal      - 2
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+				WPA&WPA2 Personal  - 3
+					Pairwise(drop down)
+						AUTO  - 0
+						TKIP  - 1
+						AES   - 2 
+					Password
+			Group Rekey (in seconds)
+			Defualt IP (Ip address validation)
+
+TLS CFG Settings
+	Enable TLS (checkbox)
+	###### enable ######
+		Enable Passpharse (checkbox)
+		###### enable ######
+			Passpharse
+		Num SSL files
+		--> based on the num ssl file upload boxes below it should grow

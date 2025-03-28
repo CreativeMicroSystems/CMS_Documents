@@ -1,0 +1,28 @@
+{
+    "MQTT_CFG" : 
+    {
+        "SERVER_TYPE" : "3", 
+        "CYC_DATA_PER": "60",
+        "HC_PER": "30",
+        "BROKER_IP": "iot-06z00doavvum1aa.mqtt.iothub.aliyuncs.com",
+        "BROKER_PORT": "8883",
+        "CLIENT_ID": "wTofNuIVAPs3gQoOKWdH000100|authType=connwl,securemode=-2,_ss=1,ext=3,_v=sdk-c-4.2.0|",
+        "EN_AUTH" : "1",
+        "UNAME": "India_Gatewayee&gwk5FsGe18Z",
+        "PWD": "^1^1709267548788^fbf1ffad722556a",
+        "PUB_TOPIC": "/gwk5FsGe18Z/India_Gatewayee/user/update",
+        "SUB_TOPIC": "A10000247C9EE1",
+        "PRODUCT_KEY" : "gwk5FsGe18Z",
+        "PRODUCT_SECRET" : "XwiSKhsgSTsjE75N"
+    },
+    "TLS_CFG":
+    {
+        "ENABLE_TLS": "0",
+        "ENABLE_PASSPHARSE": "",
+        "PASSPHARSE": "",
+        "NUM_SSL_FILES": "",
+        "SSL_FILE_1_PATH": "",
+        "SSL_FILE_2_PATH": "",
+        "SSL_FILE_3_PATH": ""
+    }
+}

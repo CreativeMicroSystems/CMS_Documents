@@ -1,0 +1,117 @@
+
+######## UPSTREAM JSONS ############ [mqtt, restapi, NTP]
+
+{
+    "REQ_TYPE" : "ENABLE_UPSTREAM_TRAFFIC_MONITOR",
+    "FILTER" : "ALL"
+}
+{
+    "REQ_TYPE" : "ENABLE_UPSTREAM_TRAFFIC_MONITOR",
+    "FILTER" : "MQTT"
+}
+{
+    "REQ_TYPE" : "ENABLE_UPSTREAM_TRAFFIC_MONITOR",
+    "FILTER" : "RESTAPI"
+}
+{
+    "REQ_TYPE" : "ENABLE_UPSTREAM_TRAFFIC_MONITOR",
+    "FILTER" : "NTP"
+}
+{
+    "REQ_TYPE" : "DISABLE_UPSTREAM_TRAFFIC_MONITOR",
+}
+{
+    "REQ_TYPE" : "GET_UPSTREAM_TRAFFIC_MONITOR_DATA",
+}
+
+UPSTREAM RESPONSE===>
+{
+    "NUM_LINES": "3",
+    "DATUM": [
+        {
+            "TIMESTAMP": "2025-02-07 10:44:09",
+			"PROTOCOL" : "MQTT",
+            "DATA": "MQTT CONNECTED SUCCESSFULLY"
+        },
+        {
+            "TIMESTAMP": "2025-02-07 10:44:09",
+			"PROTOCOL" : "NTP",
+            "DATA": "NTP SYNCED TIME"
+        },
+        {
+            "TIMESTAMP": "2025-02-07 10:44:09",
+			"PROTOCOL" : "MQTT",
+            "DATA": "MQTT RECONNECTING"
+        }
+    ]
+}
+
+######## DOWNSTREAM JSONS ############ [Modbus]
+
+{
+    "REQ_TYPE" : "ENABLE_DOWNSTREAM_TRAFFIC_MONITOR",
+    "FILTER" : "ALL"
+}
+{
+    "REQ_TYPE" : "ENABLE_DOWNSTREAM_TRAFFIC_MONITOR",
+    "FILTER" : "1"
+}
+{
+    "REQ_TYPE" : "ENABLE_DOWNSTREAM_TRAFFIC_MONITOR",
+    "FILTER" : "2"
+}
+{
+    "REQ_TYPE" : "ENABLE_DOWNSTREAM_TRAFFIC_MONITOR",
+    "FILTER" : "3"
+}
+{
+    "REQ_TYPE" : "ENABLE_DOWNSTREAM_TRAFFIC_MONITOR",
+    "FILTER" : "4"
+}
+{
+    "REQ_TYPE" : "ENABLE_DOWNSTREAM_TRAFFIC_MONITOR",
+    "FILTER" : "5"
+}
+{
+    "REQ_TYPE" : "DISABLE_DOWNSTREAM_TRAFFIC_MONITOR",
+}
+
+{
+    "REQ_TYPE" : "GET_DOWNSTREAM_TRAFFIC_MONITOR_DATA",
+}
+
+
+DOWNSTREAM RESPONSE===>
+{
+    "NUM_LINES": "3",
+    "DATUM": [
+        {
+            "DIRECTION": "T",
+            "TIMESTAMP": "2025-02-07 10:44:09",
+            "PORT_ID": "1",
+            "DEVICE_NAME": "COUNTER_1",
+            "FRAME": "01 03 00 03 00 01 74 0a"
+        },
+        {
+            "DIRECTION": "R",
+            "TIMESTAMP": "2025-02-07 10:44:09",
+            "PORT_ID": "1",
+            "DEVICE_NAME": "COUNTER_1",
+            "FRAME": "01 03 02 01 90 b9 b8"
+        },
+        {
+            "DIRECTION": "T",
+            "TIMESTAMP": "2025-02-07 10:44:09",
+            "PORT_ID": "1",
+            "DEVICE_NAME": "COUNTER_1",
+            "FRAME": "01 03 00 04 00 01 c5 cb"
+        }
+    ]
+}
+
+DOWNSTREAM RESPONSE===>
+{
+    "NUM_LINES": "0",
+    "DATUM": [
+    ]
+}
