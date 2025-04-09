@@ -7,15 +7,19 @@ Username : yocto_imx6
 Password : Redhat$321
 
 
-export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
+cmd -> export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 
-repo init -u https://github.com/MYiR-Dev/myir-imx-manifest.git --no-clone-bundle --depth=1 -m myir-i.mx6ul-5.4.3-2.0.0.xml -b i.MX6UL-5.4-zeus 
+For downloading Linux - 5.4.3 Version
+cmd -> repo init -u https://github.com/MYiR-Dev/myir-imx-manifest.git --no-clone-bundle --depth=1 -m myir-i.mx6ul-5.4.3-2.0.0.xml -b i.MX6UL-5.4-zeus 
 ----OR---
-repo init -u https://github.com/MYiR-Dev/myir-imx-manifest.git --no-clone-bundle --depth=1 -m myir-i.mx6ul-5.10.9-1.0.0.xml -b i.MX6UL-5.10-gatesgarth
-repo sync
+For downloading Linux - 5.10.9 Version
+cmd -> repo init -u https://github.com/MYiR-Dev/myir-imx-manifest.git --no-clone-bundle --depth=1 -m myir-i.mx6ul-5.10.9-1.0.0.xml -b i.MX6UL-5.10-gatesgarth
 
-DISTRO=fsl-imx-fb MACHINE=myd-y6ull14x14 source myir-setup-release.sh -b build_imx6ull
-bitbake myir-image-full
+Forsysnching the updated files from GITHUB
+cmd -> repo sync
+
+cmd -> DISTRO=fsl-imx-fb MACHINE=myd-y6ull14x14 source myir-setup-release.sh -b build_imx6ull
+cmd -> bitbake myir-image-full
 
 
 

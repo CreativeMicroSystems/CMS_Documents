@@ -1,6 +1,6 @@
-###################################################
-############# UPDATED on 27/03/2025 ###############
-###################################################
+##################################################
+############ UPDATED on 09-APR-2025 ##############
+##################################################
 
 SETTING_ENV IN SERVER:
 ---------------
@@ -326,7 +326,62 @@ End Method 2---------------------------------------
 				
 		Note : After transferring put [CMD -> ldconfig]  in IMX device (to refresh the lib folders)
 	
-	------------ python 3.9 --------
+	------------ libmodbus -----------
+		########## Compiled Enviroinment ##########
+		Distributor ID      : Ubuntu
+		Description         : Ubuntu 22.04.3 LTS
+		Release             : 22.04
+		Codename            : jammy
+		Linux Kernel version: 6.5.0-26-generic
+		########## Compiled Enviroinment ##########
+
+		cmd --> mkdir libmodbus
+		cmd --> cd libmodbus
+		cmd --> wget https://github.com/stephane/libmodbus/releases/download/v3.1.10/libmodbus-3.1.10.tar.gz
+		cmd --> tar xvf libmodbus-3.1.10.tar.gz
+		cmd --> cd libmodbus-3.1.10
+		cmd --> export ARCH=arm
+		cmd --> export CROSS_COMPILE=/home/sanjay/KERNEL/imx6ul/IMX6UL/MYIR-MYD-Y6ULG2/MYD-Docs/03-Tools/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+		cmd --> mkdir -p ./output
+		cmd --> ./configure --host=arm-linux-gnueabihf --prefix=$(pwd)/output CC=${CC} CFLAGS="-static -mfloat-abi=hard" LDFLAGS="-Wl,--dynamic-linker=/lib/ld-linux-armhf.so.3"
+		cmd --> make -j$(nproc)
+		cmd --> make install
+		transfer the files in the lib to the device "/lib" dir and give the permissions
+		cmd --> cd output/lib
+		use the .h files in the "./include/modbus" dir as a header for development
+		cmd --> cd output/include/modbus/
+		Note:
+			Default test files will be generated in the "./tests" folder
+
+
+		--- for compiling Sample files BEGIN ----
+		cmd --> export CC=/home/sanjay/KERNEL/imx6ul/IMX6UL/MYIR-MYD-Y6ULG2/MYD-Docs/03-Tools/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc
+		cmd --> export LIBMODBUS_LIB_PATH=/home/sanjay/CC/cross_compilation_imx/libmodbus/libmodbus-3.1.10/output/lib
+		cmd --> export LIBMODBUS_INC_PATH=/home/sanjay/CC/cross_compilation_imx/libmodbus/libmodbus-3.1.10/output/include/modbus
+		cmd --> cat <<EOF > sample_modtcp.c
+				#include <stdio.h>
+				#include <modbus.h>
+
+				int main(void) {
+				  printf("#### sample_modbus started running .... ####\n");
+				  modbus_t *mb;
+				  uint16_t tab_reg[32];
+				  mb = modbus_new_tcp("127.0.0.1", 1502);
+				  modbus_connect(mb);
+
+				  /* Read 5 registers from the address 0 */
+				  modbus_read_registers(mb, 0, 5, tab_reg);
+
+				  modbus_close(mb);
+				  modbus_free(mb);
+				  printf("#### sample_modbus Stopped ####\n");
+				}
+				EOF
+
+		cmd --> $CC sample_modtcp.c -I. -I$LIBMODBUS_INC_PATH -L$LIBMODBUS_LIB_PATH -lmodbus -o sample_modtcp_exe -Wl,--dynamic-linker=/lib/ld-linux-armhf.so.3
+		--- for compiling Sample files END ----
+		
+	------------ python 3.9 [NOT COMPLETED]--------
 		cmd --> mkdir python3.9
 		cmd --> wget https://www.python.org/ftp/python/3.9.18/Python-3.9.18.tgz
 		cmd --> tar -xvzf Python-3.9.18.tgz
@@ -342,7 +397,7 @@ IMPORTANT NOTES FOR ENABLING DRIVERS :
 	2 - for using RTC enable [Dallas/Maxim DS1307/37/38/39/40, ST M41T00, EPSON RX-8025] (loc ---> device drivers -> Real time clock -> Dallas/Maxim DS1307/37/38/39/40, ST M41T00, EPSON RX-8025)
 	3 - for using  RTL8188EUS WIFI Module enable "Realtek RTL8192CU/RTL8188CU USB Wireless Network Adapter" and "Debugging output for rtlwifi driver family" (loc ---> Device Drivers->Network device support->Wireless LAN->Realtek rtlwifi family of devices)
 	4 - for using RTL8731BU WIFI Modulde there is no default drivers present in linux4.1.15 so we want to add manuallay
-		*********** manual driver compilation for RTL8731BU *********
+		*********** Manual driver compilation for RTL8731BU BEGIN *********
 		cmd --> mkdir ~/IMX6ul-y2_with_RTL8731
 				transfer "rtl8733BU_WiFi_linux_v5.13.0.1-112-g10248f4f3.20230626_COEX20230616-330e.tar.gz" to linux server
 		cmd --> cd ~/IMX6ul-y2_with_RTL8731
@@ -376,7 +431,7 @@ IMPORTANT NOTES FOR ENABLING DRIVERS :
 		cmd --> make clean
 		cmd --> make
 				If everything goes well, it will produce a rtl8731bu_driver.ko file.
-				
+		*********** Manual driver compilation for RTL8731BU END *********		
 				
 EXTRA FEATURES (Establishing in Device): 
 
@@ -604,11 +659,14 @@ EXTRA FEATURES (Establishing in Device):
 					Note : In dnsmasq.conf change the dns address to the wlan0 ip address otherwise it will disconnect after connecting becoz it will try to ping that after connecting
 						37) dhcp-option=6,192.168.10.1               # Set the DNS server IP (same as dnsmasq server)
 						37) dhcp-option=6,192.168.10.123               # Set the DNS server IP (same as dnsmasq server)
-					
+	
+	
+	WIFI CONNECTION SPEED CHECKING TOOLS
+	------------
 		--- checking signal strength ---
 			cmd --> iwconfig wlan0
 			
-		--- check speed ---
+		--- check WIFI speed ---
 			1) install "ping tool" app in your mobile
 				
 				speed test in STA mode in IMX and AP mode in mobile
