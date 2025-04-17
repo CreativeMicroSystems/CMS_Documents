@@ -1,5 +1,5 @@
 ##################################################
-############ UPDATED on 09-APR-2025 ##############
+############ UPDATED on 16-APR-2025 ##############
 ##################################################
 
 SETTING_ENV IN SERVER:
@@ -397,41 +397,100 @@ IMPORTANT NOTES FOR ENABLING DRIVERS :
 	2 - for using RTC enable [Dallas/Maxim DS1307/37/38/39/40, ST M41T00, EPSON RX-8025] (loc ---> device drivers -> Real time clock -> Dallas/Maxim DS1307/37/38/39/40, ST M41T00, EPSON RX-8025)
 	3 - for using  RTL8188EUS WIFI Module enable "Realtek RTL8192CU/RTL8188CU USB Wireless Network Adapter" and "Debugging output for rtlwifi driver family" (loc ---> Device Drivers->Network device support->Wireless LAN->Realtek rtlwifi family of devices)
 	4 - for using RTL8731BU WIFI Modulde there is no default drivers present in linux4.1.15 so we want to add manuallay
-		*********** Manual driver compilation for RTL8731BU BEGIN *********
-		cmd --> mkdir ~/IMX6ul-y2_with_RTL8731
-				transfer "rtl8733BU_WiFi_linux_v5.13.0.1-112-g10248f4f3.20230626_COEX20230616-330e.tar.gz" to linux server
-		cmd --> cd ~/IMX6ul-y2_with_RTL8731
-		cmd --> tar -xvf rtl8733BU_WiFi_linux_v5.13.0.1-112-g10248f4f3.20230626_COEX20230616-330e.tar.gz
-		cmd --> cd rtl8733BU_WiFi_linux_v5.13.0.1-112-g10248f4f3.20230626_COEX20230616-330e
-		cmd --> vi Makefile
-				152 CONFIG_PLATFORM_I386_PC = y  (--)
-				152 CONFIG_PLATFORM_I386_PC = n  (++)
+		*********** Manual driver compilation for RTL8731BU *********
+		SETTING_ENV IN SERVER:
+		---------------
+			cmd --> export ARCH=arm
+			cmd --> export CROSS_COMPILE=/home/imx6ul/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+			cmd --> export imxcc=/home/imx6ul/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc
+		
+		IMPORTANAT NOTE:
+			WE HAVE A DRIVER SOURCE FILE FOR "RTL8733BU" CHIP. ALL RTL873X CAN USE THIS SO NOW WE ARE COMPILING THIS FOR "RTL8731BU" CHIPSET. 
+			
+		step 1 :  create a directory in your server
+					cmd -> mkdir ~/DCU_WITH_EC200_n_6131EU_WIFI_MODULES
+		step 2 :  get the  "old_DCU_kernel_src.7z" from the https://github.com/CreativeMicroSystems/DCU_WITH_EC200_n_6131EU_WIFI_MODULES and put it inside "~/DCU_WITH_EC200_n_6131EU_WIFI_MODULES" dir
+		step 3 :  get the  "rtl8733BU_WiFi_linux_v5.13.0.1-112-g10248f4f3.20230626_COEX20230616-330e.tar.gz" from the https://github.com/CreativeMicroSystems/DCU_WITH_EC200_n_6131EU_WIFI_MODULES and put it inside "~/DCU_WITH_EC200_n_6131EU_WIFI_MODULES" dir
+		step 4 :  extract the files
+					cmd -> 7z x old_DCU_kernel_src.7z
+					cmd -> tar -xvf rtl8733BU_WiFi_linux_v5.13.0.1-112-g10248f4f3.20230626_COEX20230616-330e.tar.gz 
+		step 5 :  Making Wifi driver 
+					Enabling wifi supporting driver cfgs(cfg80211) in kernel src code
+						cmd --> cd ~/DCU_WITH_EC200_n_6131EU_WIFI_MODULES/MYiR-iMX-Linux
+						cmd --> make menuconfig
+						enable drivers
+							--- Networking support---
+								--- Wireless ---
+									<*>   cfg80211 - wireless configuration API                                                                                     
+									[ ]     nl80211 testmode command (NEW)                                                                          
+									[ ]     enable developer warnings (NEW)                                                                                                         
+									[ ]     cfg80211 regulatory debugging (NEW)                                                                                                        
+									[ ]     cfg80211 certification onus (NEW)                                                                                                           
+									[*]     enable powersave by default (NEW)                                                                                                           
+									[ ]     cfg80211 DebugFS entries (NEW)                                                                                                              
+									[ ]     use statically compiled regulatory rules database (NEW)                                                                                     
+									[ ]     cfg80211 wireless extensions compatibility (NEW)                                                                                            
+									<*>   Generic IEEE 802.11 Networking Stack (mac80211)                                                                                               
+									[*]   Minstrel (NEW)                                                                                                                                
+									[*]     Minstrel 802.11n support (NEW)                                                                                                              
+									[ ]       Minstrel 802.11ac support (NEW)                                                                                                          
+									Default rate control algorithm (Minstrel)  --->                                                                                              
+									[ ]   Enable mac80211 mesh networking (pre-802.11s) support (NEW)                                                                                   
+									[ ]   Enable LED triggers (NEW)                                                                                                                     
+									[ ]   Export mac80211 internals in DebugFS (NEW)                                                                                                    
+									[ ]   Trace all mac80211 debug messages (NEW)                                                                                                       
+									[ ]   Select mac80211 debugging features (NEW)  ----
+						save the menuconfig
+					Make the kernel first then make the wifi driver
+						cmd --> make
+							If everything goes well, it will produce a kernel files.
+							
+							KERNEL IMAGE:
+								In IMX the kernel image is ZIMAGE file
+								zImage location --> ~/DCU_WITH_EC200_n_6131EU_WIFI_MODULES/MYiR-iMX-Linux/arch/arm/boot
+							
+							DTB:
+								myd-y6ull-gpmi-weim.dtb (FOR Y2 BASED BOARDS)
+								myd-y6ul-gpmi-weim.dtb  (FOR G2 BASED BOARDS)
+								dtb file location --> ~/DCU_WITH_EC200_n_6131EU_WIFI_MODULES/MYiR-iMX-Linux/arch/arm/boot/dts
+								
+					Now make the wifi driver			
+					cmd --> cd ~/DCU_WITH_EC200_n_6131EU_WIFI_MODULES/rtl8733BU_WiFi_linux_v5.13.0.1-112-g10248f4f3.20230626_COEX20230616-330e
+					cmd --> vi Makefile
+							152 CONFIG_PLATFORM_I386_PC = y  (--)
+							152 CONFIG_PLATFORM_I386_PC = n  (++)
+							
+							167 CONFIG_PLATFORM_FS_MX61 = n  (--)
+							167 CONFIG_PLATFORM_FS_MX61 = y  (++)
+							
+							--- remove the below lines ---
+								1629 ifeq ($(CONFIG_PLATFORM_FS_MX61), y)
+								1630 EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
+								1631 ARCH := arm
+								1632 CROSS_COMPILE := /home/share/CusEnv/FreeScale/arm-eabi-4.4.3/bin/arm-eabi-
+								1633 KSRC ?= /home/share/CusEnv/FreeScale/FS_kernel_env
+								1634 endif
+							--- remove the above lines ---
+							
+							+++ add the below line +++
+								1629 ifeq ($(CONFIG_PLATFORM_FS_MX61), y)
+								1630 EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN -DRTW_USE_CFG80211_STA_EVENT -DCONFIG_IOCTL_CFG80211
+								1631 ARCH := arm
+								1632 CROSS_COMPILE := /home/imx6ul/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+								1633 KSRC ?= /home/imx6ul/DCU_WITH_EC200_n_6131EU_WIFI_MODULES/MYiR-iMX-Linux
+								1634 MODULE_NAME := rtl8733bu_driver
+								1635 endif
+							+++ add the above line +++
+							NOTE:
+								KSRC is a kernel source so if you are compiling this driver to some kernel don't forget to give that kernel source path
+								or else it will cause kernel mismatch error
+								
+								In the makefile you can give thew output .ko file name in "MODULE_NAME"
+								
+					cmd --> make clean
+					cmd --> make
+							If everything goes well, it will produce a rtl8733bu_driver.ko file.
 				
-				167 CONFIG_PLATFORM_FS_MX61 = n  (--)
-				167 CONFIG_PLATFORM_FS_MX61 = y  (++)
-				
-				--- remove the below lines ---
-					1629 ifeq ($(CONFIG_PLATFORM_FS_MX61), y)
-					1630 EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
-					1631 ARCH := arm
-					1632 CROSS_COMPILE := /home/share/CusEnv/FreeScale/arm-eabi-4.4.3/bin/arm-eabi-
-					1633 KSRC ?= /home/share/CusEnv/FreeScale/FS_kernel_env
-					1634 endif
-				--- remove the above lines ---
-				
-				+++ add the below line +++
-					1629 ifeq ($(CONFIG_PLATFORM_FS_MX61), y)
-					1630 EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN -DRTW_USE_CFG80211_STA_EVENT -DCONFIG_IOCTL_CFG80211
-					1631 ARCH := arm
-					1632 CROSS_COMPILE := /home/sanjay/KERNEL/imx6ul/IMX6UL/MYIR-MYD-Y6ULG2/MYD-Docs/03-Tools/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
-					1633 KSRC ?= /home/sanjay/KERNEL/imx6ul/IMX6UL/MYIR-MYD-Y6ULG2/MYD-Docs/04-Source/MYiR-iMX-Linux
-					1634 MODULE_NAME := rtl8731bu_driver
-					1635 endif
-				+++ add the above line +++
-		cmd --> make clean
-		cmd --> make
-				If everything goes well, it will produce a rtl8731bu_driver.ko file.
-		*********** Manual driver compilation for RTL8731BU END *********		
 				
 EXTRA FEATURES (Establishing in Device): 
 
@@ -537,7 +596,7 @@ EXTRA FEATURES (Establishing in Device):
 		cmd --> ping 8.8.8.8
 
 	
-	RTL8731BU WIFI Module Setup (for wifi connection)
+	RTL8731BU WIFI Module Setup Manually (for wifi connection)
 	----------------
 		------------ CHECK WIFI MODULE HARDWARE CONNECTION STATUS VIA USB ------------
 		cmd --> lsusb
@@ -679,3 +738,179 @@ EXTRA FEATURES (Establishing in Device):
 					In imx give 
 						establish iperf server  cmd -->  iperf3 -s
 					In mobile establish a iperf client and try to connect with port number 5201
+					
+**************** NEW DCU KERNEL COMPILATION BEGIN ************
+This is the main kernel src for the new DCU
+OLD DCU
+	modem : EC25
+	wifi  : NOT INTEGRATED
+
+NEW DCU
+	modem : EC200
+	wifi  : fn.link 6131E-U (chipset : rtl8731BU)
+	
+SRC DIRECTORY 
+	Local PC(192.168.10.120)        : C:\Users\Admin\OneDrive - Creative Micro Systems\Sanjay_src\Projects\DCU_WITH_EC200_n_6131EU_WIFI_MODULES
+	Github repository 				: https://github.com/CreativeMicroSystems/DCU_WITH_EC200_n_6131EU_WIFI_MODULES
+	SERVER LOGIN CREDIANTIALS
+		User_name	: imx6ul
+		Password 	: softel
+	SERVER PATHS	  
+		Main dir                 : /home/imx6ul/DCU_WITH_EC200_n_6131EU_WIFI_MODULES
+		old DCU Linux SRC dir    : /home/imx6ul/DCU_WITH_EC200_n_6131EU_WIFI_MODULES/old_DCU_kernel_src.7z
+		latest DCU Linux SRC dir : /home/imx6ul/DCU_WITH_EC200_n_6131EU_WIFI_MODULES/MYiR-iMX-Linux
+		Toolchain dir		     : /home/imx6ul/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin
+
+--- IF U GOING TO START FRESHELY FOLLOW THESE STEPS (MANUALLY) ---
+
+	step 1 : SETTING_ENV IN SERVER:
+				cmd --> export ARCH=arm
+				cmd --> export CROSS_COMPILE=/home/imx6ul/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+				cmd --> export imxcc=/home/imx6ul/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc
+	
+	step 2 : Download the sources from the github (https://github.com/CreativeMicroSystems/DCU_WITH_EC200_n_6131EU_WIFI_MODULES)
+				cmd -> git clone https://Sanjay27112000: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@github.com/CreativeMicroSystems/DCU_WITH_EC200_n_6131EU_WIFI_MODULES.git
+	step 3 : Go to the directory
+				cmd -> cd DCU_WITH_EC200_n_6131EU_WIFI_MODULES
+	step 4 :  extract the files
+				cmd -> 7z x old_DCU_kernel_src.7z
+				cmd -> tar -xvf rtl8733BU_WiFi_linux_v5.13.0.1-112-g10248f4f3.20230626_COEX20230616-330e.tar.gz 
+	step 5 :  Copy the driver src to the kernel source
+				cmd -> cp -r rtl8733BU_WiFi_linux_v5.13.0.1-112-g10248f4f3.20230626_COEX20230616-330e ./MYiR-iMX-Linux/drivers/net/wireless/rtl8733bu
+	step 6 :  Extract the file system
+				cmd -> tar xzpf File_System.tar.gz
+	step 6 :  cmd -> cd ./MYiR-iMX-Linux
+	step 7 :  cmd -> export KERNEL_SRC_DIR=$(pwd)
+	step 8 :  Add the driver dir in the makefile
+				cmd -> echo -e "#+++++ cms_rtl873xseries_custom_driver Begin +++++\n" >> ./drivers/net/wireless/Makefile
+				cmd -> echo -e "obj-$(CONFIG_RTL8733BU)           += rtl8733bu/\n" >> ./drivers/net/wireless/Makefile
+				cmd -> echo -e "#+++++ cms_rtl873xseries_custom_driver End +++++\n" >> ./drivers/net/wireless/Makefile
+				
+	step 9 : Add the driver Kconfig in the 
+				cmd -> echo -e "#+++++ cms_rtl873xseries_custom_driver Begin +++++" > ./drivers/net/wireless/temp_insert.txt
+				cmd -> echo -e "source \"drivers/net/wireless/rtl8733bu/Kconfig\"" >> ./drivers/net/wireless/temp_insert.txt
+				cmd -> echo -e "#+++++ cms_rtl873xseries_custom_driver End +++++" >> ./drivers/net/wireless/temp_insert.txt
+				cmd -> sed -i '/endif # WLAN/r ./drivers/net/wireless/temp_insert.txt' Kconfig
+				cmd -> sed -i '/endif # WLAN/i\\' ./drivers/net/wireless/Kconfig
+				cmd -> rm ./drivers/net/wireless/temp_insert.txt
+	step 10 : Now make the wifi driver			
+				cmd --> vi drivers/net/wireless/rtl8733bu
+						152 CONFIG_PLATFORM_I386_PC = y  (--)
+						152 CONFIG_PLATFORM_I386_PC = n  (++)
+						
+						167 CONFIG_PLATFORM_FS_MX61 = n  (--)
+						167 CONFIG_PLATFORM_FS_MX61 = y  (++)
+						
+						--- remove the below lines ---
+							1629 ifeq ($(CONFIG_PLATFORM_FS_MX61), y)
+							1630 EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
+							1631 ARCH := arm
+							1632 CROSS_COMPILE := /home/share/CusEnv/FreeScale/arm-eabi-4.4.3/bin/arm-eabi-
+							1633 KSRC ?= /home/share/CusEnv/FreeScale/FS_kernel_env
+							1634 endif
+						--- remove the above lines ---
+						
+						+++ add the below line +++
+							1629 ifeq ($(CONFIG_PLATFORM_FS_MX61), y)
+							1630 EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN -DRTW_USE_CFG80211_STA_EVENT -DCONFIG_IOCTL_CFG80211
+							1631 ARCH := $(ARCH)
+							1632 CROSS_COMPILE := $(CROSS_COMPILE)
+							1633 KSRC ?= $(KERNEL_SRC_DIR)
+							1634 MODULE_NAME := rtl8733bu_driver
+							1635 endif
+						+++ add the above line +++
+						NOTE:
+							KSRC is a kernel source so if you are compiling this driver to some kernel don't forget to give that kernel source path
+							or else it will cause kernel mismatch error
+							
+							In the makefile you can give the output .ko file name in "MODULE_NAME"
+							
+	step 11 :  Making Wifi driver 
+				Enabling wifi supporting driver cfgs(cfg80211) in kernel src code
+					cmd --> make menuconfig
+					enable drivers cfgs(cfg80211)
+						--- Networking support---
+							--- Wireless ---
+								<*>   cfg80211 - wireless configuration API                                                                                     
+								[ ]     nl80211 testmode command (NEW)                                                                          
+								[ ]     enable developer warnings (NEW)                                                                                                         
+								[ ]     cfg80211 regulatory debugging (NEW)                                                                                                        
+								[ ]     cfg80211 certification onus (NEW)                                                                                                           
+								[*]     enable powersave by default (NEW)                                                                                                           
+								[ ]     cfg80211 DebugFS entries (NEW)                                                                                                              
+								[ ]     use statically compiled regulatory rules database (NEW)                                                                                     
+								[ ]     cfg80211 wireless extensions compatibility (NEW)                                                                                            
+								<*>   Generic IEEE 802.11 Networking Stack (mac80211)                                                                                               
+								[*]   Minstrel (NEW)                                                                                                                                
+								[*]     Minstrel 802.11n support (NEW)                                                                                                              
+								[ ]       Minstrel 802.11ac support (NEW)                                                                                                          
+								Default rate control algorithm (Minstrel)  --->                                                                                              
+								[ ]   Enable mac80211 mesh networking (pre-802.11s) support (NEW)                                                                                   
+								[ ]   Enable LED triggers (NEW)                                                                                                                     
+								[ ]   Export mac80211 internals in DebugFS (NEW)                                                                                                    
+								[ ]   Trace all mac80211 debug messages (NEW)                                                                                                       
+								[ ]   Select mac80211 debugging features (NEW)  ----
+					enable driver for RTL8733BU
+						--- Device Drivers ---
+							--- Network device support ---
+								--- Wireless LAN ---
+									<*>   Realtek 8733BU USB WiFi
+					save the menuconfig
+					
+	step 12 :  Make the kernel
+					cmd --> make
+					
+				If everything goes well, it will produce a kernel files.
+				
+				KERNEL IMAGE:
+					In IMX the kernel image is ZIMAGE file
+					zImage location --> ~/DCU_WITH_EC200_n_6131EU_WIFI_MODULES/MYiR-iMX-Linux/arch/arm/boot
+				
+				DTB:
+					myd-y6ull-gpmi-weim.dtb (FOR Y2 BASED BOARDS)
+					myd-y6ul-gpmi-weim.dtb  (FOR G2 BASED BOARDS)
+					dtb file location --> ~/DCU_WITH_EC200_n_6131EU_WIFI_MODULES/MYiR-iMX-Linux/arch/arm/boot/dts
+					
+	step 13 :  Go to the main dir 
+				cmd -> cd ..
+	step 14 :  Make the File system
+				cmd -> cd File_System
+				cmd -> make
+				Tranfer the "ubi.img" to the unit and try
+					
+--- IF U GOING TO START FRESHELY FOLLOW THESE STEPS (AUTOMATIC) (FASTRACK MODE...) ---				
+	export ARCH=arm
+	export CROSS_COMPILE=/home/imx6ul/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+	export imxcc=/home/imx6ul/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc
+	git clone https://Sanjay27112000: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@github.com/CreativeMicroSystems/DCU_WITH_EC200_n_6131EU_WIFI_MODULES.git
+	cd DCU_WITH_EC200_n_6131EU_WIFI_MODULES
+
+	7z x old_DCU_kernel_src.7z
+	tar xzpf File_System.tar.gz
+	tar -xvf rtl8733BU_WiFi_linux_v5.13.0.1-112-g10248f4f3.20230626_COEX20230616-330e.tar.gz
+	cp -r rtl8733BU_WiFi_linux_v5.13.0.1-112-g10248f4f3.20230626_COEX20230616-330e ./MYiR-iMX-Linux/drivers/net/wireless/rtl8733bu
+
+	patch -p0 < ./patches/rtl8733bu_makefile_for_IMX.patch
+	patch -p0 < ./patches/wireless_makefile_for_wifi.patch
+	patch -p0 < ./patches/wireless_kconfig_for_wifi.patch
+	patch -p0 < ./patches/menuconfig_for_wifi_n_802-11.patch
+
+	export KERNEL_SRC_DIR=$(pwd)
+
+	make clean -C ./MYiR-iMX-Linux 
+	make -C ./MYiR-iMX-Linux 
+	make -C ./File_System/IMX_NEW_DCU_FS/
+
+	cp ./File_System/IMX_NEW_DCU_FS/ubi.img ./Linux_4.1.15_IMX_Loading_UtilityV_A1.2_22_Jul_2024/kernel/
+	cp ./MYiR-iMX-Linux/arch/arm/boot/dts/myd-y6ul-gpmi-weim.dtb ./Linux_4.1.15_IMX_Loading_UtilityV_A1.2_22_Jul_2024/kernel/
+	cp ./MYiR-iMX-Linux/arch/arm/boot/dts/myd-y6ull-gpmi-weim.dtb ./Linux_4.1.15_IMX_Loading_UtilityV_A1.2_22_Jul_2024/kernel/			
+	
+	**** TRANSFER THE "./Linux_4.1.15_IMX_Loading_UtilityV_A1.2_22_Jul_2024" DIR TO THE PC AND LOAD THE LINUX KERNEL TO THE UNIT ****
+	ERRORS FUTURE FIX:
+		transfer the proper libnl-200.so file to the /usr/lib
+			root@myd-y6ull14x14:~# hostapd
+			hostapd: /usr/lib/libnl-3.so.200: version `libnl_3_2_27' not found (required by hostapd)
+		Give proper permissons to the /etc/hostapd.conf
+			root@myd-y6ull14x14:~# vsftpd
+			500 OOPS: config file not owned by correct user, or not a file
+**************** NEW DCU KERNEL COMPILATION END ************
