@@ -1,5 +1,5 @@
 ##################################################
-############ UPDATED on 17-APR-2025 ##############
+############ UPDATED on 18-APR-2025 ##############
 ##################################################
 
 SETTING_ENV IN SERVER:
@@ -380,6 +380,17 @@ End Method 2---------------------------------------
 
 		cmd --> $CC sample_modtcp.c -I. -I$LIBMODBUS_INC_PATH -L$LIBMODBUS_LIB_PATH -lmodbus -o sample_modtcp_exe -Wl,--dynamic-linker=/lib/ld-linux-armhf.so.3
 		--- for compiling Sample files END ----
+	
+	------------ C-JSON --------------
+		cmd --> export CC=/home/sanjay/KERNEL/imx6ul/IMX6UL/MYIR-MYD-Y6ULG2/MYD-Docs/03-Tools/Toolchain/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc
+		cmd --> git clone https://github.com/DaveGamble/cJSON.git
+		cmd --> cd cJSON
+		cmd --> mkdir build
+		cmd --> cd build
+		cmd --> cmake .. -DENABLE_CJSON_UTILS=On -DENABLE_CJSON_TEST=on -DCMAKE_INSTALL_PREFIX=./output
+		cmd --> make DESTDIR=$pkgdir install
+		cmd --> output
+		cmd --> ls
 		
 	------------ python 3.9 [NOT COMPLETED]--------
 		cmd --> mkdir python3.9
